@@ -1,0 +1,61 @@
+/**
+ * CSS for Tree Register application
+ *
+ * (C) Alexandre Morin 2015 - 2016
+ */
+
+.tree-map {
+  width: 1024;
+  height: 768;
+  margin-bottom: 24px;    
+}
+
+/* Tree info (InfoWindow when clicking on marker on the map) */
+.tree-info {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+h1.tree-info-name {
+  font-size: 24px;
+  font-weight: 100;
+  text-align: right;
+}
+h2.tree-info-location {
+  font-size: 14px;
+  margin-top: 0px;
+  margin-bottom: 22px;
+  text-align: right;
+}
+.tree-info-attr {
+}
+.tree-info-attr-label {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  margin-right: 6px;
+}
+.tree-info-attr-value {
+  font-size: 12px;
+}
+.tree-info-gutter {
+  margin-top: 12px;
+}
+.tree-info-description {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.tree-info-cover-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.tree-info-cover {
+  width: 344px;
+}
+
+/* Directions */
+.directions {
+  margin-left: 8px;
+  margin-right: 8px;
+}

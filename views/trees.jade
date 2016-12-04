@@ -1,0 +1,79 @@
+//- 
+
+html
+  head
+    title!= title
+    link(rel="shortcut icon" type="image/png" href="/core/images/favicon.png?v=2")
+    link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet', type='text/css')
+
+    link(rel="stylesheet", href="/core/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/core/css/bootstrap-theme.min.css")
+    link(rel="stylesheet", href="/core/css/tipsy.css")
+    link(rel="stylesheet", href="/core/css/core.css")
+    link(rel="stylesheet", href="/trees/css/trees.css")
+
+    script(src="/core/js/lib/jquery-2.1.1.min.js")
+    script(src="/core/js/lib/bootstrap.min.js")
+    script(src="/core/js/lib/moment.min.js")
+    script(src="/core/js/lib/keyboard.js")
+    script(src="/core/js/lib/jquery.scrollTo.min.js")
+    script(src="/core/js/lib/jquery.tipsy.js")
+
+    script(src="/core/js/utils-cli.js")
+    script(src="/trees/js/trees-cli.js")
+
+  body
+    div(id="debug", class="debug")
+    div(id="env",   class="env")
+      != env
+
+    div(class="header")
+      h1!= message
+
+    div(class="inner")
+      div(id="menu", class="menu")
+        div(id="menu-hamburger")
+        div(id="menu-commands")
+
+      div(class="canvap")
+        div(id="canvas", class="canvas")
+          div(id="map" class="tree-map")
+        div(class="pad")
+
+      div(id="infos",  class="infos")
+        div(class="infos-close")
+        div(class="infos-inner")
+          div(id="directions" class="directions")
+            div
+              h1(class='tree-info-name') Itinéraires
+              input(id="it-from", name="it-from", spellcheck="false", placeholder="Départ")
+              input(id="it-to", name="it-to", spellcheck="false", placeholder="Arrivée")
+              button(id="it-go") Go!
+              hr
+            div
+              h1(class='tree-info-name') Localisation
+              span Departement:
+              select(id="department-select")
+                option( value=0) Aucun
+                option( value=3) 03 - Allier
+                option(value=18) 18 - Cher
+                option(value=36) 36 - Indre
+                option(value=43) 43 - Haute-Loire
+                option(value=45) 45 - Loiret
+                option(value=58) 58 - Nièvre
+                option(value=67) 67 - Bas-Rhin
+                option(value=68) 68 - Haut-Rhin
+                option(value=73) 73 - Savoie
+                option(value=74) 74 - Haute-Savoie
+              hr
+          div(id="tree-info" class="tree-info")
+
+    div(id="copyright",   class="copyright")
+      != copyright
+
+    script(src="https://maps.googleapis.com/maps/api/js?key=" + mapsAPIKey + "&callback=initMap")
+
+    script.
+      document.userContext = !{JSON.stringify(userContext).replace(/<\//g, "<\\/")}
+    script.
+      document.sideMenu = !{JSON.stringify(sideMenu).replace(/<\//g, "<\\/")}
